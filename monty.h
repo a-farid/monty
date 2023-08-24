@@ -2,24 +2,11 @@
 #define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include <sys/types.h>
+#include <unistd.h>
 #include <fcntl.h>
+#include <string.h>
 #include <ctype.h>
-/**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
- */
-typedef struct instruction_s
-{
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -51,7 +38,19 @@ typedef struct bus_s
 	int lifi;
 }  bus_t;
 extern bus_t bus;
-
+/**
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
+typedef struct instruction_s
+{
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
+} instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 char  *clean_line(char *content);
 void stack_push(stack_t **head, unsigned int number);
@@ -71,9 +70,11 @@ void stack_swap(stack_t **head, unsigned int counter);
 void stack_mod(stack_t **head, unsigned int counter);
 void stack_div(stack_t **head, unsigned int counter);
 void node_add(stack_t **head, int n);
+ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
 void stack_pchar(stack_t **head, unsigned int counter);
 void stack_rotl(stack_t **head, unsigned int counter);
 void print_stack(stack_t **head, unsigned int counter);
 void stack_queue(stack_t **head, unsigned int counter);
 void que_add(stack_t **head, int n);
 #endif
+
