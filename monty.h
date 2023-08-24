@@ -85,3 +85,4 @@ char  *clean_line(char *content);
 int run(char *content, stack_t **head, unsigned int nbLine, FILE *file);
 
 #endif
+
