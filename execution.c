@@ -7,7 +7,7 @@
  * @content: line content.
  * Return: no return.
  */
-int execute_opcode(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int run(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
   instruction_t opst[] = {
 			  {"push", stack_push},

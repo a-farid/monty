@@ -74,6 +74,7 @@ ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
 void stack_pchar(stack_t **head, unsigned int counter);
 void stack_rotl(stack_t **head, unsigned int counter);
 void print_stack(stack_t **head, unsigned int counter);
+int run(char *content, stack_t **head, unsigned int nbLine, FILE *file);
 void stack_queue(stack_t **head, unsigned int counter);
 void que_add(stack_t **head, int n);
 #endif
